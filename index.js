@@ -8,11 +8,18 @@ const lookup = {
   'Y': 'L','Z': 'M'
 };
 
-function rot13(encodedStr){
-  const codeArr = encodedStr.split("");  // String to Array
-  let decodedArr = []; // Your Result goes here
+function rot13(encodedStr) {
+  var codeArr = encodedStr.split("");  // String to Array
+  var decodedArr = []; // Your Result goes here
   // Only change code below this line
-  // your code here
+
+  decodedArr = codeArr.map(function(letter) {
+    if(lookup.hasOwnProperty(letter)) {
+      letter = lookup[letter];
+    }
+    return letter;
+  });
+
   // Only change code above this line
   return decodedArr.join(""); // Array to String
 }
